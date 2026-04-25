@@ -1,0 +1,126 @@
+# This is a small script to run the auction process. This script
+# invokes individual processes for each bidder and the evaluator.
+# It begins by removing the shared memory instance from any previous run.
+# The executable auction takes two parameters: id and bid value.
+# Both these parameters are mandatory to be provided.
+# The id 0 corresponds to the Evaluator and rest of the ids are for other
+# bidders. The id 99 corresponds to the verifier who checks all proofs.
+# ***IMPORANT*** 
+# It is important to ensure that the ids are in sequence and correspond exactly
+# to the number of bidders configured in common.h file. For example, in this 
+# case we have used 10 bidders with bit length of 10. Hence the ids are used
+# from 0-9. In case number of bidders is to be increased, change the number in 
+# common.h file for number of bidders and uncomment those in this script.
+# For example, if the number of bidders needs to be increased to 16, change the 
+# MAX_BIDDERS value to 16 in common.h file. Then uncomment the lines till the 
+# one which mentions "auction 15 705&". Similarly for decreasing the number of
+# bidders, change the common.h file and comment out the lines below.
+# If MAX_BIT_LENGTH is changed in common.h file, there is no need to change this
+# file. One can also change the bid values used below. However, note that it 
+# should be matching the bits used for representation. For example, if 5 bits
+# used for MAX_BIT_LENGTH, choose bid values from 1 to 31.
+
+rm /dev/shm/Bulletin\ Board
+rm /dev/shm/sem.*
+killall fpa
+fpa 0 100 &
+fpa 1 279 &
+fpa 2 614 &
+fpa 3 820 &
+fpa 4 872 &
+fpa 5 739 &
+fpa 6 639 &
+fpa 7 339 &
+fpa 8 239 &
+fpa 9 137 &
+fpa 10 105 &
+fpa 11 205 &
+fpa 12 305 &
+fpa 13 505 &
+fpa 14 405 &
+fpa 15 705 &
+fpa 16 805 &
+fpa 17 905 &
+fpa 18 600 &
+fpa 19 601 &
+#fpa 20 602 &
+#fpa 21 603 &
+#fpa 22 604 &
+#fpa 23 625 &
+#fpa 24 635 &
+#fpa 25 695 &
+#fpa 26 390 &
+#fpa 27 290 &
+#fpa 28 190 &
+#fpa 29 990 &
+#fpa 30 690 &
+#fpa 31 943 &
+#fpa 32 333 &
+#fpa 33 532 &
+#fpa 34 783 &
+#fpa 35 854 &
+#fpa 36 739 &
+#fpa 37 639 &
+#fpa 38 339 &
+#fpa 39 239 &
+#fpa 40 139 &
+#fpa 41 105 &
+#fpa 42 205 &
+#fpa 43 305 &
+#fpa 44 505 &
+#fpa 45 405 &
+#fpa 46 705 &
+#fpa 47 805 &
+#fpa 48 905 &
+#fpa 49 991 &
+#fpa 50 602 &
+#fpa 51 603 &
+#fpa 52 604 &
+#fpa 53 625 &
+#fpa 54 635 &
+#fpa 55 695 &
+#fpa 56 390 &
+#fpa 57 290 &
+#fpa 58 190 &
+#fpa 59 992 &
+#fpa 60 602 &
+#fpa 61 603 &
+#fpa 62 604 &
+#fpa 63 625 &
+#fpa 64 635 &
+#fpa 65 695 &
+#fpa 66 390 &
+#fpa 67 290 &
+#fpa 68 190 &
+#auction 69 993 &
+#auction 70 602 &
+#auction 71 603 &
+#auction 72 604 &
+#auction 73 625 &
+#auction 74 635 &
+#auction 75 695 &
+#auction 76 390 &
+#auction 77 290 &
+#auction 78 190 &
+#auction 79 994 &
+#auction 80 602 &
+#auction 81 603 &
+#auction 82 604 &
+#auction 83 625 &
+#auction 84 635 &
+#auction 85 695 &
+#auction 86 390 &
+#auction 87 290 &
+#auction 88 190 &
+#auction 89 995 &
+#auction 90 602 &
+#auction 91 603 &
+#auction 92 604 &
+#auction 93 625 &
+#auction 94 635 &
+#auction 95 695 &
+#auction 96 390 &
+#auction 97 290 &
+#auction 98 996 &
+fpa 99 0 &
+exit

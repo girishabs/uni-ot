@@ -1,0 +1,5 @@
+g++ -g  -I"inc/"  src/*.cpp -o fpa -lssl -lcrypto -lpthread
+#Uncomment the following line and comment out the above line for compiling with OT usage (instead of Uni-OT)
+#g++ -g  -I"inc/"  -DOT src/*.cpp -o fpa -lssl -lcrypto -lpthread
+
+
